@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Освітній ресурс з цифрової схемотехніки">
     <meta name="author" content="Святний Тимофій">
-    <title>схемотехніка - infoelcyc - головна</title>
+    <title>схемотехніка - infoelcyc - лічильник з перенесенням</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,17 +23,46 @@
             </ul>
         </nav>
     </header>
-<main>
-    <h1>Пропозиції та ідеї</h1>
-    <p>Якщо у вас є ідеї для нових розділів, тем або покращень сайту, будь ласка, поділіться ними! Ваші пропозиції допоможуть зробити infoelCYC ще кращим ресурсом для вивчення цифрової схемотехніки.</p>
-    <form action="submit_suggestion.php" method="post">
-        <label for="suggestion">Ваша пропозиція:</label><br>
-        <textarea id="suggestion" name="suggestion" rows="4" cols="50" required placeholder="Напишіть вашу ідею тут..."></textarea><br>
-        <input type="file" name="attachment" accept=".pdf,.doc,.docx, .png, .jpg, .jpeg">
-        <input type="submit" value="Надіслати пропозицію">
-    </form>
-    <a href="https://github.com/timasvatnuj-commits/infoelcyc/pulls" target="_blank">infoelCYC на GitHub</a>
-</main>
+    <main>
+        <h1>Лічильник з перенесенням (Ripple Counter)</h1>
+        <img src="rippcount.png">
+        <p>Лічильник з перенесенням — це асинхронний лічильник, який використовує каскад тригерів для підрахунку імпульсів. Він працює в двійковій системі числення.</p>
+        
+        <h2>Як працює</h2>
+        <p>Кожен тригер переключається на спадному фронті сигналу від попереднього тригера. Це створює ефект "перенесення", звідки і назва.</p>
+        
+        <h2>Двійковий підрахунок</h2>
+        <p>З 4 тригерами лічильник може підраховувати від 0 до 15 (2^4 - 1 = 15).</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Десяткове</th>
+                    <th>Двійкове</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>0</td><td>0000</td></tr>
+                <tr><td>1</td><td>0001</td></tr>
+                <tr><td>2</td><td>0010</td></tr>
+                <tr><td>3</td><td>0011</td></tr>
+                <tr><td>4</td><td>0100</td></tr>
+                <tr><td>5</td><td>0101</td></tr>
+                <tr><td>6</td><td>0110</td></tr>
+                <tr><td>7</td><td>0111</td></tr>
+                <tr><td>8</td><td>1000</td></tr>
+                <tr><td>9</td><td>1001</td></tr>
+                <tr><td>10</td><td>1010</td></tr>
+                <tr><td>11</td><td>1011</td></tr>
+                <tr><td>12</td><td>1100</td></tr>
+                <tr><td>13</td><td>1101</td></tr>
+                <tr><td>14</td><td>1110</td></tr>
+                <tr><td>15</td><td>1111</td></tr>
+            </tbody>
+        </table>
+        
+        <p>Після 15 лічильник повертається до 0.</p>
+    </main>
     <footer>
         <div class="footer-content">
             <div class="footer-section">
